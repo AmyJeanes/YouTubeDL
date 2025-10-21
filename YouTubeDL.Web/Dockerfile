@@ -1,6 +1,6 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0@sha256:ad4acf911eada1bcbfd0dd9f3fa514143fba8654ca8844df9032471adc2f9bd9 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:9.0@sha256:bf48e8b328707fae0e63a1b7d764d770221def59b97468c8cdee68f4e38ddfb9 AS base
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -13,7 +13,7 @@ RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o 
   chmod a+rx /usr/local/bin/yt-dlp
 USER app
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:a5dd7352c0c058a6f847c95a1147b060e95a532444f14b34d8fa9aaa0a76702f AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:ca77338a19f87a7d24494a3656cb7d878a040c158621337b9cd3ab811c5eb057 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["YouTubeDL.Web/YouTubeDL.Web.csproj", "YouTubeDL.Web/"]
