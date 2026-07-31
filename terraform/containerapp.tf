@@ -2,6 +2,7 @@ resource "azurerm_container_app_environment" "main" {
   name                       = "youtubedl-env"
   resource_group_name        = azurerm_resource_group.main.name
   location                   = azurerm_resource_group.main.location
+  logs_destination           = "log-analytics"
   log_analytics_workspace_id = azurerm_log_analytics_workspace.main.id
 }
 
